@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/ETTU-org/ettu-backend/discussions
+    about: Questions, idées, et discussions générales
+  - name: 🔒 Security Issue
+    url: https://github.com/ETTU-org/ettu-backend/security/advisories/new
+    about: Signaler une vulnérabilité de sécurité (privé)
+  - name: 📧 Email Support
+    url: mailto:support@ettu.dev
+    about: Support technique et questions commerciales
+  - name: 💬 Discord
+    url: https://discord.gg/ettu
+    about: Chat communautaire et aide instantanée

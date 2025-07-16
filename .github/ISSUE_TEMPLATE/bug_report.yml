@@ -1,0 +1,110 @@
+name: Bug Report
+description: Report a bug to help us improve ETTU Backend
+title: "[Bug] "
+labels: ["bug", "triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps de remplir ce rapport de bug ! 🐛
+        
+        Avant de créer un nouveau rapport, vérifiez si un problème similaire n'a pas déjà été signalé.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Quelle version d'ETTU Backend utilisez-vous ?
+      placeholder: "ex: 0.1.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environnement
+      description: Dans quel environnement le bug se produit-il ?
+      options:
+        - Development
+        - Staging
+        - Production
+        - Local
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description du bug
+      description: Décrivez clairement le problème rencontré
+      placeholder: "Le bug se produit quand..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Étapes pour reproduire
+      description: Comment reproduire le bug ?
+      placeholder: |
+        1. Faire une requête à '/api/projects'
+        2. Cliquer sur '...'
+        3. Voir l'erreur
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportement attendu
+      description: Que devrait-il se passer normalement ?
+      placeholder: "Je m'attendais à..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportement actuel
+      description: Que se passe-t-il en réalité ?
+      placeholder: "Au lieu de cela..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs et messages d'erreur
+      description: Copiez les logs pertinents ou messages d'erreur
+      placeholder: |
+        ```
+        [2024-01-01 10:00:00] ERROR: ...
+        ```
+      render: shell
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexte additionnel
+      description: Informations supplémentaires sur le système
+      placeholder: |
+        - OS: Ubuntu 22.04
+        - Rust version: 1.75.0
+        - Database: PostgreSQL 15
+        - Autres détails...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Vérifiez les points suivants
+      options:
+        - label: J'ai vérifié que ce bug n'a pas déjà été signalé
+          required: true
+        - label: J'ai inclus toutes les informations nécessaires
+          required: true
+        - label: J'ai testé avec la dernière version
+          required: false
+        - label: J'ai des logs ou traces d'erreur
+          required: false

@@ -1,0 +1,41 @@
+version: 2
+plan: pro
+project_language: rust
+validation:
+  version: 2
+  override: true
+  ignore:
+    - "target/**"
+    - "tests/**"
+    - "benches/**"
+    - "examples/**"
+    - "docs/**"
+    - "*.md"
+coverage:
+  status:
+    project:
+      default:
+        target: 80%
+        threshold: 1%
+        base: auto
+    patch:
+      default:
+        target: 80%
+        threshold: 1%
+        base: auto
+  ignore:
+    - "src/main.rs"
+    - "src/bin/**"
+    - "tests/**"
+    - "benches/**"
+    - "examples/**"
+
+comment:
+  layout: "header, diff, flags, components, footer"
+  behavior: default
+  require_changes: false
+  require_base: no
+  require_head: yes
+  branches:
+    - main
+    - develop

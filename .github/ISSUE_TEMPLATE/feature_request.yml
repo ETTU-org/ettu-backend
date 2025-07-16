@@ -1,0 +1,130 @@
+name: Feature Request
+description: Suggest a new feature for ETTU Backend
+title: "[Feature] "
+labels: ["enhancement", "feature-request"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de proposer une nouvelle fonctionnalité pour ETTU Backend ! ✨
+        
+        Avant de créer une nouvelle demande, vérifiez si une fonctionnalité similaire n'a pas déjà été proposée.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Catégorie
+      description: Dans quelle catégorie cette fonctionnalité s'inscrit-elle ?
+      options:
+        - API / Endpoints
+        - Database / Schema
+        - Authentication / Security
+        - Performance / Caching
+        - Real-time / WebSocket
+        - Moderation / Admin
+        - DevOps / Infrastructure
+        - Documentation
+        - Testing
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priorité
+      description: Quelle est l'importance de cette fonctionnalité ?
+      options:
+        - Low - Nice to have
+        - Medium - Would be helpful
+        - High - Important for users
+        - Critical - Blocking or essential
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problème ou besoin
+      description: Quel problème cette fonctionnalité résout-elle ?
+      placeholder: "En tant qu'utilisateur, je rencontre le problème suivant..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution proposée
+      description: Décrivez la fonctionnalité que vous aimeriez voir implémentée
+      placeholder: "Je propose d'ajouter..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considérées
+      description: Avez-vous pensé à d'autres solutions ?
+      placeholder: "J'ai aussi pensé à..."
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Cas d'usage
+      description: Comment cette fonctionnalité serait-elle utilisée ?
+      placeholder: |
+        1. L'utilisateur veut...
+        2. Il va sur...
+        3. Il peut maintenant...
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Critères d'acceptation
+      description: Comment savoir que la fonctionnalité est complète ?
+      placeholder: |
+        - [ ] L'utilisateur peut...
+        - [ ] Le système répond...
+        - [ ] Les tests passent...
+
+  - type: textarea
+    id: technical-considerations
+    attributes:
+      label: Considérations techniques
+      description: Impact technique, dépendances, complexité...
+      placeholder: |
+        - Database changes needed
+        - New dependencies
+        - API changes
+        - Performance impact
+
+  - type: checkboxes
+    id: implementation
+    attributes:
+      label: Implémentation
+      description: Êtes-vous prêt à contribuer ?
+      options:
+        - label: Je peux implémenter cette fonctionnalité
+          required: false
+        - label: Je peux aider avec la documentation
+          required: false
+        - label: Je peux aider avec les tests
+          required: false
+        - label: Je peux aider avec la review
+          required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Vérifiez les points suivants
+      options:
+        - label: J'ai vérifié que cette fonctionnalité n'a pas déjà été proposée
+          required: true
+        - label: J'ai décrit clairement le problème et la solution
+          required: true
+        - label: J'ai inclus des cas d'usage concrets
+          required: true
+        - label: J'ai considéré l'impact technique
+          required: false

@@ -1,0 +1,120 @@
+name: Documentation
+description: Improve or request documentation
+title: "[Docs] "
+labels: ["documentation"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de contribuer à améliorer la documentation d'ETTU Backend ! 📚
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type de documentation
+      description: Quel type de documentation est concerné ?
+      options:
+        - API Documentation
+        - Setup / Installation
+        - Configuration
+        - Architecture
+        - Development Guide
+        - Deployment Guide
+        - Security Documentation
+        - Contributing Guide
+        - README
+        - Code Comments
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: Action demandée
+      description: Que souhaitez-vous faire ?
+      options:
+        - Add new documentation
+        - Update existing documentation
+        - Fix documentation error
+        - Improve clarity
+        - Add examples
+        - Translate documentation
+        - Remove outdated content
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Décrivez ce qui doit être ajouté, modifié ou corrigé
+      placeholder: "La documentation sur l'authentification manque..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Emplacement
+      description: Où se trouve la documentation concernée ?
+      placeholder: |
+        - File: README.md
+        - Section: Authentication
+        - Line: 42
+        - URL: https://github.com/ETTU-org/ettu-backend/blob/main/docs/api.md
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Contenu actuel
+      description: Quel est le contenu actuel (si applicable) ?
+      placeholder: "Actuellement, il est écrit..."
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Contenu proposé
+      description: Que devrait-il être écrit à la place ?
+      placeholder: "Je propose d'écrire..."
+
+  - type: textarea
+    id: audience
+    attributes:
+      label: Public cible
+      description: À qui s'adresse cette documentation ?
+      placeholder: |
+        - Développeurs débutants
+        - Développeurs expérimentés
+        - Administrateurs système
+        - Utilisateurs finaux
+        - Contributeurs
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Comment pouvez-vous aider ?
+      options:
+        - label: Je peux écrire la documentation
+          required: false
+        - label: Je peux fournir des exemples
+          required: false
+        - label: Je peux faire la relecture
+          required: false
+        - label: Je peux traduire
+          required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Vérifiez les points suivants
+      options:
+        - label: J'ai vérifié que cette documentation n'est pas déjà en cours
+          required: true
+        - label: J'ai clairement défini ce qui doit être fait
+          required: true
+        - label: J'ai identifié le public cible
+          required: true
