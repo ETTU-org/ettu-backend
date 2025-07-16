@@ -151,7 +151,7 @@ Please include the following information in your report:
 
 ## Contact Information
 
-- **General Contact**: julesbossis@gmail.com
+- **General Contact**: contact.ettu@gmail.com
 - **Emergency Contact**: Available 24/7 for critical security issues
 
 ## Acknowledgments
