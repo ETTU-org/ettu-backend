@@ -1,0 +1,120 @@
+[package]
+name = "ettu-backend"
+version = "0.1.0"
+edition = "2021"
+description = "Backend for ETTU - A modern project management and collaboration platform"
+license = "MIT"
+repository = "https://github.com/ETTU-org/ettu-backend"
+homepage = "https://ettu.dev"
+documentation = "https://docs.ettu.dev"
+keywords = ["web", "api", "backend", "project-management", "collaboration"]
+categories = ["web-programming", "api-bindings"]
+authors = ["ETTU Team <team@ettu.dev>"]
+readme = "README.md"
+
+[dependencies]
+# Web Framework
+axum = { version = "0.7", features = ["json", "query", "tower-log", "tracing", "ws"] }
+tower = { version = "0.4", features = ["full"] }
+tower-http = { version = "0.5", features = ["cors", "fs", "compression-gzip", "trace"] }
+hyper = { version = "1.0", features = ["full"] }
+tokio = { version = "1.0", features = ["full"] }
+
+# Database
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid", "json"] }
+sea-query = "0.30"
+sea-query-postgres = "0.4"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_with = "3.0"
+
+# Authentication & Security
+jsonwebtoken = "9.0"
+bcrypt = "0.15"
+uuid = { version = "1.0", features = ["v4", "serde"] }
+rand = "0.8"
+
+# Time & Date
+chrono = { version = "0.4", features = ["serde"] }
+time = { version = "0.3", features = ["serde"] }
+
+# Async Runtime
+async-trait = "0.1"
+futures = "0.3"
+
+# Validation
+validator = { version = "0.18", features = ["derive"] }
+
+# Configuration
+config = "0.14"
+dotenvy = "0.15"
+
+# Logging & Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
+tracing-appender = "0.2"
+
+# Redis
+redis = { version = "0.24", features = ["tokio-comp", "connection-manager"] }
+
+# HTTP Client
+reqwest = { version = "0.11", features = ["json", "rustls-tls"] }
+
+# Error Handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Templating (for emails)
+handlebars = "4.5"
+
+# Rate Limiting
+tower_governor = "0.3"
+
+# Metrics
+metrics = "0.22"
+metrics-exporter-prometheus = "0.13"
+
+# File Upload
+multer = "3.0"
+
+# Email
+lettre = { version = "0.11", features = ["tokio1-rustls-tls"], default-features = false }
+
+# OpenAPI Documentation
+utoipa = { version = "4.0", features = ["axum_extras", "chrono", "uuid"] }
+utoipa-swagger-ui = { version = "6.0", features = ["axum"] }
+
+# Testing
+mockall = "0.12"
+
+[dev-dependencies]
+# Testing
+tokio-test = "0.4"
+assert_matches = "1.5"
+pretty_assertions = "1.4"
+serial_test = "3.0"
+
+# Benchmarking
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[features]
+default = []
+integration = []
+profiling = ["tokio/tracing"]
+
+[[bin]]
+name = "ettu-backend"
+path = "src/main.rs"
+
+[profile.dev]
+debug = true
+overflow-checks = true
+
+[profile.release]
+debug = false
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
