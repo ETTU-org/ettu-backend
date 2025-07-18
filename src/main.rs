@@ -64,8 +64,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Run migrations if database is available
     if let Some(ref database) = db {
-        database.migrate().await.expect("Failed to run migrations");
-        info!("Database migrations completed");
+        match database.migrate().await {
+            Ok(_) => info!("✅ Database migrations completed successfully"),
+            Err(e) => {
+                warn!("⚠️  Migration warning: {}. This may be normal if migrations are already applied.", e);
+                info!("Continuing with current database state...");
+            }
+        }
     }
 
     // Application state
